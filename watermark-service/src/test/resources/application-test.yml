@@ -1,0 +1,17 @@
+watermark:
+  simulation:
+    book.delay: 10000
+    journal.delay: 10000
+  thread-pool:
+    core.size: 10
+    queue-capacity: 500
+    max.size: 15
+  swagger:
+    title: Watermark Service
+    description: Service for watermarking the document
+    licenseUrl: https://opensource.org/licenses/Apache-2.0
+    contactName: Dmytro Karmanov
+    contactUrl: http://github.com/karmanov/watermark-service
+    contactEmail: karmanov.d@gmail.com
+    license: Apache-2.0
+    version: 0.0.1-SNAPSHOT
