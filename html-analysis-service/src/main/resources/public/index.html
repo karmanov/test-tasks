@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Web Page Analyzing tool</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Web Page Analyzing tool</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right" id="url-form">
+                <div class="form-group">
+                    <input type="text" placeholder="URL to analyze" id="url" class="form-control">
+                </div>
+                <button type="submit" id="btn-analyze" class="btn btn-success">Analyze</button>
+            </form>
+        </div><!--/.navbar-collapse -->
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h4 id="general-header">General statistics</h4>
+            <table id="general-table" class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Title</th>
+                    <th>HTML Version</th>
+                    <th>Has Login form</th>
+                    <th>Count of the heading elements</th>
+                    <th>Count of the internal links</th>
+                    <th>Count of the external links</th>
+                </tr>
+                </thead>
+                <tr>
+                    <td id="address"></td>
+                    <td id="url-title"></td>
+                    <td id="url-html-version"></td>
+                    <td id="url-has-login-form"></td>
+                    <td id="url-heading-count"></td>
+                    <td id="url-internal-count"></td>
+                    <td id="url-external-count"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h4 id="headings-header">Heading statistics</h4>
+            <table id="headings-table" class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>H1</th>
+                    <th>H2</th>
+                    <th>H3</th>
+                    <th>H4</th>
+                    <th>H5</th>
+                    <th>H6</th>
+                </tr>
+                </thead>
+                <tr>
+                    <td id="h1-count"></td>
+                    <td id="h2-count"></td>
+                    <td id="h3-count"></td>
+                    <td id="h4-count"></td>
+                    <td id="h5-count"></td>
+                    <td id="h6-count"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h4 id="links-header">Links statistics</h4>
+            <table id="links-table" class="table table-striped table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="webjars/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

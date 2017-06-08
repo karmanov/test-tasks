@@ -1,0 +1,4 @@
+challenge.thread-pool:
+  core.size: 10
+  max.size: 20
+  queue-capacity: 500
