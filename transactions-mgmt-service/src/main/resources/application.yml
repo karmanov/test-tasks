@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: transaction-mgmt-service
+
+server:
+  port: 8081
+
+tms:
+  swagger:
+    title: Transaction Management Service
+    description: Service for managing transactions and calculate statistics
+    licenseUrl: https://opensource.org/licenses/Apache-2.0
+    contactName: Dmytro Karmanov
+    contactUrl: TBA
+    contactEmail: karmanov.d@gmail.com
+    license: Apache-2.0
+    version: 0.0.1-SNAPSHOT
+
