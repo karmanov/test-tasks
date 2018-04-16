@@ -1,0 +1,2 @@
+TRUNCATE TABLE events;
+TRUNCATE TABLE measurement;
