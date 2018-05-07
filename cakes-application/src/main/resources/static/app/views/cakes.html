@@ -1,0 +1,100 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-success">
+            <div class="panel-heading">Cake</div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <form ng-submit="submit()" name="cakeForm" novalidate>
+
+                        <div class="form-group"
+                             ng-class="{ 'has-error': cakeForm.name.$invalid && cakeForm.name.$dirty }">
+                            <label for="description">Description:</label> <input type="text" required
+                                                                                 class="form-control"
+                                                                                 ng-model="currentCake.description"
+                                                                                 id="description"
+                                                                                 name="description">
+                        </div>
+
+                        <div class="form-group"
+                             ng-class="{ 'has-error': cakeForm.username.$invalid && cakeForm.username.$dirty }">
+                            <label for="price">Price:</label> <input type="text"
+                                                                     required class="form-control"
+                                                                     ng-model="currentCake.price"
+                                                                     id="price" name="price">
+                        </div>
+
+                        <div class="form-group"
+                             ng-class="{ 'has-error': cakeForm.username.$invalid && cakeForm.username.$dirty }">
+                            <label for="quantity">Quantity:</label> <input type="text"
+                                                                           required class="form-control"
+                                                                           ng-model="currentCake.quantity"
+                                                                           id="quantity" name="quantity">
+                        </div>
+
+                        <div class="form-group"
+                             ng-class="{ 'has-error': cakeForm.username.$invalid && cakeForm.username.$dirty }">
+                            <label for="image">Image:</label> <input type="text"
+                                                                     required class="form-control"
+                                                                     ng-model="currentCake.image"
+                                                                     id="image" name="image">
+                        </div>
+                        <button type="submit" class="btn btn-success"
+                                ng-disabled="cakeForm.$invalid">{{buttonText}}
+                        </button>
+
+                        <div class="alert alert-info margin-top-5" ng-show="message">{{message}}</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                Users
+                <button type="button" class="btn btn-default btn-sm"
+                        ng-click="initAdd()">
+                    <span class="glyphicon glyphicon-plus"></span> New Cake
+                </button>
+            </div>
+            <div class="panel-body">
+
+                <div class="alert alert-info margin-top-5" ng-show="deleteMessage">{{deleteMessage}}</div>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Image</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="cake in cakes">
+                        <td>{{$index+1}}</td>
+                        <td>{{cake.description}}</td>
+                        <td>{{cake.price}}</td>
+                        <td>{{cake.quantity}}</td>
+                        <td><img src="{{cake.image}}" height="100" width="100"></td>
+                        <td>
+                            <button type="button" class="btn btn-default btn-sm"
+                                    ng-click="initEdit(cake)">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-default btn-sm"
+                                    ng-click="deleteCake(cake)">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

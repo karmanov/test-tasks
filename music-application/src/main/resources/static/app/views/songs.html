@@ -1,0 +1,89 @@
+<div class="row">
+    <div class="col-sm-6 ">
+        <div class="panel panel-default">
+            <div class="panel-heading">Song</div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <form ng-submit="submit()" name="songForm" novalidate>
+
+                        <div class="form-group"
+                             ng-class="{ 'has-error': songForm.artist.$invalid && songForm.artist.$dirty }">
+                            <label for="artist">Artist:</label> <input type="text" required
+                                                                                 class="form-control"
+                                                                                 ng-model="currentSong.artist"
+                                                                                 id="artist"
+                                                                                 name="artist">
+                        </div>
+
+                        <div class="form-group"
+                             ng-class="{ 'has-error': songForm.genre.$invalid && songForm.genre.$dirty }">
+                            <label for="genre">Genre:</label> <input type="text"
+                                                                     required class="form-control"
+                                                                     ng-model="currentSong.genre"
+                                                                     id="genre" name="genre">
+                        </div>
+                        <div class="form-group"
+                             ng-class="{ 'has-error': songForm.image.$invalid && songForm.image.$dirty }">
+                            <label for="image">Image:</label> <input type="text"
+                                                                     required class="form-control"
+                                                                     ng-model="currentSong.image"
+                                                                     id="image" name="image">
+                        </div>
+                        <button type="submit" class="btn btn-default"
+                                ng-disabled="songForm.$invalid">{{buttonText}}
+                        </button>
+
+                        <div class="alert alert-info margin-top-5" ng-show="message">{{message}}</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Users
+                <button type="button" class="btn btn-default btn-sm"
+                        ng-click="initAdd()">
+                    <span class="glyphicon glyphicon-plus"></span> New Song
+                </button>
+            </div>
+            <div class="panel-body">
+
+                <div class="alert alert-info margin-top-5" ng-show="deleteMessage">{{deleteMessage}}</div>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Artist</th>
+                        <th>Genre</th>
+                        <th>Image</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="song in songs">
+                        <td>{{$index+1}}</td>
+                        <td>{{song.artist}}</td>
+                        <td>{{song.genre}}</td>
+                        <td><img src="{{song.image}}" height="100" width="100"></td>
+                        <td>
+                            <button type="button" class="btn btn-default btn-sm"
+                                    ng-click="initEdit(song)">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-default btn-sm"
+                                    ng-click="deleteSong(song)">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
